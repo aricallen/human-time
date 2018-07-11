@@ -1,4 +1,4 @@
-const Constants = require('constants.js');
+const Constants = require('./constants.js');
 /**
  * GOAL: console.log(HumanTime(ms).toString())
  * @param {Number} milliseconds

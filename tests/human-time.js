@@ -1,12 +1,12 @@
 const test = require('tape');
-const HumanTime = require('../modules/human-time.js');
+const HumanTime = require('../index.js');
 const {
   MS_PER_SECOND,
   MS_PER_MINUTE,
   MS_PER_HOUR,
   MS_PER_DAY,
   MS_PER_WEEK,
-} = require('../common/constants.js');
+} = require('../constants.js');
 
 const expected = {
   milliseconds: {

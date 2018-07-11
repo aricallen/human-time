@@ -1,9 +1,12 @@
 {
-  "name": "human-time",
+  "name": "@aricallen/human-time",
   "version": "1.0.0",
   "description": "helper for turning milliseconds into human understandable time",
   "main": "index.js",
   "author": "aricallen",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "tape": "^4.9.1"
+  }
 }

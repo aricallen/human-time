@@ -1,0 +1,44 @@
+Arguments: 
+  /Users/aric/.nvm/versions/node/v10.4.1/bin/node /Users/aric/.nvm/versions/node/v10.4.1/bin/yarn publish --access=public
+
+PATH: 
+  /Users/aric/.nvm/versions/node/v10.4.1/bin:/Users/aric/.npm-packages/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/aric/.yarn/bin:/Users/aric/.apache-maven/bin:/Users/aric/Library/Python/2.7/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  10.4.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/Users/aric/.nvm/versions/node/v10.4.1/lib/node_modules/yarn/lib/cli.js:131036:13)
+      at Interface.emit (events.js:182:13)
+      at Interface._ttyWrite (readline.js:783:16)
+      at ReadStream.onkeypress (readline.js:168:10)
+      at ReadStream.emit (events.js:182:13)
+      at emitKeys (internal/readline.js:422:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1022:36)
+      at ReadStream.emit (events.js:182:13)
+      at addChunk (_stream_readable.js:283:12)
+
+npm manifest: 
+  {
+    "name": "human-time",
+    "version": "1.0.0",
+    "description": "helper for turning milliseconds into human understandable time",
+    "main": "index.js",
+    "author": "aricallen",
+    "license": "MIT",
+    "private": false
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

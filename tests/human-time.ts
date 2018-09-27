@@ -1,12 +1,12 @@
-const test = require('tape');
-const HumanTime = require('../index.js');
-const {
+import test from 'tape';
+import HumanTime from '../dist/index.js';
+import {
   MS_PER_SECOND,
   MS_PER_MINUTE,
   MS_PER_HOUR,
   MS_PER_DAY,
   MS_PER_WEEK,
-} = require('../constants.js');
+} from '../dist/constants';
 
 const expected = {
   milliseconds: {

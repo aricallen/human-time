@@ -2,11 +2,17 @@
   "name": "@aricallen/human-time",
   "version": "1.0.1",
   "description": "helper for turning milliseconds into human understandable time",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "aricallen",
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "scripts": {
+    "dev": "tsc -p tsconfig.json -w",
+    "compile": "tsc -p tsconfig.json",
+    "test": "npm run compile && tape tests/*.js tests/**/*.js | faucet"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.3",
     "tape": "^4.9.1"
   }
 }

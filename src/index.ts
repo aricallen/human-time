@@ -1,12 +1,12 @@
-const Constants = require('./constants.js');
-/**
- * GOAL: console.log(HumanTime(ms).toString())
- * @param {Number} milliseconds
- */
-const HumanTime = (milliseconds = 0) => {
-  const { MS_PER_SECOND, MS_PER_MINUTE, MS_PER_HOUR, MS_PER_DAY, MS_PER_WEEK } = Constants;
+import { MS_PER_SECOND, MS_PER_MINUTE, MS_PER_HOUR, MS_PER_DAY, MS_PER_WEEK } from './constants';
 
-  const buildText = (key, value) => `${value} ${key.replace(/s$/, '')}${value === 1 ? '' : 's'}`;
+interface HumanTimeModel {
+  value: number,
+  text: string
+}
+
+const HumanTime = (milliseconds = 0) => {
+  const buildText = (key: string, value: number) => `${value} ${key.replace(/s$/, '')}${value === 1 ? '' : 's'}`;
 
   const units = [
     {
@@ -36,7 +36,7 @@ const HumanTime = (milliseconds = 0) => {
   ];
 
   let remainingMilliseconds = milliseconds;
-  const humanTime = {};
+  const humanTime = {} as { [key: string]: HumanTimeModel };
   for (let i = units.length - 1; i >= 0; i -= 1) {
     const unit = units[i];
     const value = Math.floor(remainingMilliseconds / unit.baseMultiplier);
@@ -64,4 +64,4 @@ const HumanTime = (milliseconds = 0) => {
   return Object.assign({}, humanTime, { toString });
 };
 
-module.exports = HumanTime;
+export default HumanTime;

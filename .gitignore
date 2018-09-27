@@ -1,4 +1,4 @@
 node_modules/
 .vscode/
-dist/*.ts
-dist/*.js
+dist/
+!dist/.gitkeep

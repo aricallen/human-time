@@ -1,20 +1,15 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declaration": true,
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
     "target": "es2017",
     "outDir": "dist",
+    "baseUrl": ".",
+    "rootDirs": ["src", "tests"],
     "noEmitHelpers": true,
-    "noImplicitAny": true,
+    "strict": true,
     "skipLibCheck": true,
-    "sourceMap": false
   },
   "include": [
-    "src/**/*.ts"
+    "src/"
   ]
 }

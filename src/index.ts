@@ -1,6 +1,6 @@
 import { MS_PER_SECOND, MS_PER_MINUTE, MS_PER_HOUR, MS_PER_DAY, MS_PER_WEEK } from './constants';
 
-interface HumanTimeModel {
+export interface HumanTimeModel {
   value: number,
   text: string
 }

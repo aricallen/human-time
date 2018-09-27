@@ -1,5 +1,5 @@
-import test from 'tape';
-import HumanTime from '../dist/index.js';
+import * as test from 'tape';
+import HumanTime, { HumanTimeModel } from '../dist/index.js';
 import {
   MS_PER_SECOND,
   MS_PER_MINUTE,
@@ -8,7 +8,7 @@ import {
   MS_PER_WEEK,
 } from '../dist/constants';
 
-const expected = {
+const expected: { [key: string]: HumanTimeModel } = {
   milliseconds: {
     value: 42,
     text: `${42} milliseconds`,
@@ -35,88 +35,92 @@ const expected = {
   },
 };
 
-test(`HumanTime | values`, (assert) => {
-  assert.equal(
+test(`HumanTime | values`, (t) => {
+  t.plan(12);
+
+  t.equal(
     HumanTime(expected.milliseconds.value).milliseconds.value,
     expected.milliseconds.value,
     'milliseconds value'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.milliseconds.value).milliseconds.text,
     expected.milliseconds.text,
     'milliseconds text'
   );
 
-  assert.equal(
+  t.equal(
     HumanTime(expected.seconds.value * 1000).seconds.value,
     expected.seconds.value,
     'seconds value'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.seconds.value * 1000).seconds.text,
     expected.seconds.text,
     'seconds text'
   );
 
-  assert.equal(
+  t.equal(
     HumanTime(expected.minutes.value * 1000 * 60).minutes.value,
     expected.minutes.value,
     'minutes value'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.minutes.value * 1000 * 60).minutes.text,
     expected.minutes.text,
     'minutes text'
   );
 
-  assert.equal(
+  t.equal(
     HumanTime(expected.hours.value * 1000 * 60 * 60).hours.value,
     expected.hours.value,
     'hours value'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.hours.value * 1000 * 60 * 60).hours.text,
     expected.hours.text,
     'hours text'
   );
 
-  assert.equal(
+  t.equal(
     HumanTime(expected.days.value * 1000 * 60 * 60 * 24).days.value,
     expected.days.value,
     'days value'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.days.value * 1000 * 60 * 60 * 24).days.text,
     expected.days.text,
     'days text'
   );
 
-  assert.equal(
+  t.equal(
     HumanTime(expected.weeks.value * 1000 * 60 * 60 * 24 * 7).weeks.value,
     expected.weeks.value,
     'weeks value'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.weeks.value * 1000 * 60 * 60 * 24 * 7).weeks.text,
     expected.weeks.text,
     'weeks text'
   );
 
-  assert.end();
+  t.end();
 });
 
-test(`HumanTime | toString`, (assert) => {
-  assert.equal(
+test(`HumanTime | toString`, (t) => {
+  t.plan(6);
+
+  t.equal(
     HumanTime(expected.milliseconds.value).toString(),
     '42 milliseconds',
     'toString milliseconds'
   );
-  assert.equal(
+  t.equal(
     HumanTime(expected.seconds.value * MS_PER_SECOND + expected.milliseconds.value).toString(),
     '21 seconds, 42 milliseconds',
     'toString seconds'
   );
-  assert.equal(
+  t.equal(
     HumanTime(
       expected.minutes.value * MS_PER_MINUTE +
         expected.seconds.value * MS_PER_SECOND +
@@ -125,7 +129,7 @@ test(`HumanTime | toString`, (assert) => {
     '1 minute, 21 seconds, 42 milliseconds',
     'toString minutes'
   );
-  assert.equal(
+  t.equal(
     HumanTime(
       expected.hours.value * MS_PER_HOUR +
         expected.minutes.value * MS_PER_MINUTE +
@@ -135,7 +139,7 @@ test(`HumanTime | toString`, (assert) => {
     '3 hours, 1 minute, 21 seconds, 42 milliseconds',
     'toString hours'
   );
-  assert.equal(
+  t.equal(
     HumanTime(
       expected.days.value * MS_PER_DAY +
         expected.hours.value * MS_PER_HOUR +
@@ -146,7 +150,7 @@ test(`HumanTime | toString`, (assert) => {
     '2 days, 3 hours, 1 minute, 21 seconds, 42 milliseconds',
     'toString days'
   );
-  assert.equal(
+  t.equal(
     HumanTime(
       expected.weeks.value * MS_PER_WEEK +
         expected.days.value * MS_PER_DAY +
@@ -159,5 +163,5 @@ test(`HumanTime | toString`, (assert) => {
     'toString weeks'
   );
 
-  assert.end();
+  t.end();
 });

@@ -9,10 +9,13 @@
   "scripts": {
     "dev": "tsc -p tsconfig.json -w",
     "compile": "tsc -p tsconfig.json",
-    "test": "npm run compile && tape tests/*.js tests/**/*.js | faucet"
+    "test": "tape -r ts-node/register tests/*.test.ts | faucet"
   },
   "devDependencies": {
-    "typescript": "^3.0.3",
-    "tape": "^4.9.1"
+    "@types/tape": "^4.2.32",
+    "faucet": "^0.0.1",
+    "tape": "^4.9.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
   }
 }

@@ -5,32 +5,32 @@ export interface HumanTimeModel {
   text: string
 }
 
-const HumanTime = (milliseconds = 0) => {
+const HumanTime = (milliseconds = 0, minimal = false) => {
   const buildText = (key: string, value: number) => `${value} ${key.replace(/s$/, '')}${value === 1 ? '' : 's'}`;
 
   const units = [
     {
-      key: 'milliseconds',
+      key: minimal ? 'm' : 'milliseconds',
       baseMultiplier: 1,
     },
     {
-      key: 'seconds',
+      key: minimal ? 's' : 'seconds',
       baseMultiplier: MS_PER_SECOND,
     },
     {
-      key: 'minutes',
+      key: minimal ? 'm' : 'minutes',
       baseMultiplier: MS_PER_MINUTE,
     },
     {
-      key: 'hours',
+      key: minimal ? 'h' : 'hours',
       baseMultiplier: MS_PER_HOUR,
     },
     {
-      key: 'days',
+      key: minimal ? 'd' : 'days',
       baseMultiplier: MS_PER_DAY,
     },
     {
-      key: 'weeks',
+      key: minimal ? 'w' : 'weeks',
       baseMultiplier: MS_PER_WEEK,
     },
   ];

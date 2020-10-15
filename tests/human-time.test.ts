@@ -1,5 +1,5 @@
 import * as test from 'tape';
-import HumanTime, { HumanTimeModel } from '../dist/index.js';
+import { HumanTime, HumanTimeModel } from '../dist/index.js';
 import {
   MS_PER_SECOND,
   MS_PER_MINUTE,

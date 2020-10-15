@@ -5,7 +5,7 @@ export interface HumanTimeModel {
   text: string
 }
 
-const HumanTime = (milliseconds = 0, minimal = false) => {
+export const HumanTime = (milliseconds = 0, minimal = false) => {
   const buildText = (key: string, value: number) => `${value} ${key.replace(/s$/, '')}${value === 1 ? '' : 's'}`;
 
   const units = [

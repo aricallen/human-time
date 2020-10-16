@@ -1,6 +1,6 @@
 {
   "name": "@aricallen/human-time",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "helper for turning milliseconds into human understandable time",
   "type": "module",
   "main": "./dist/cjs/index.js",
